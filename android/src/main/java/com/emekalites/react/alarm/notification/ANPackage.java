@@ -16,7 +16,11 @@ import java.util.List;
  */
 
 public class ANPackage implements ReactPackage {
-    public ANPackage(){
+    public ANPackage() {
+    }
+
+    public List<Class<? extends JavaScriptModule>> createJSModules() {
+        return Collections.emptyList();
     }
 
     @Override
@@ -24,11 +28,6 @@ public class ANPackage implements ReactPackage {
         List<NativeModule> modules = new ArrayList<>();
         modules.add(new ANModule(reactContext));
         return modules;
-    }
-
-    @Override
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
     }
 
     @Override
